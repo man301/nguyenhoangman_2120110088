@@ -120,3 +120,6 @@ E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\bin\PagedList.xml
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\bin\PagedList.Mvc.xml
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateProductCategory.resources
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateProductCategory1.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Update1206.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateProduct.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Update12061.resources

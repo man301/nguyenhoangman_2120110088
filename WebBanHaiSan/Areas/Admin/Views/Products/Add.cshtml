@@ -93,7 +93,7 @@
                                             @Html.ValidationMessageFor(x => x.Description, null, new { @class = "text-danger" })
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Chi tiết sản phẩm</label>
+                                            <label for="exampleInputEmail">Chi tiết sản phẩm</label>
                                             @Html.TextAreaFor(x => x.Detail, new { @class = "form-control", @id = "txtDetail" })
                                             @Html.ValidationMessageFor(x => x.Detail, null, new { @class = "text-danger" })
                                         </div>
@@ -101,23 +101,23 @@
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Số lượng</label>
-                                                    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @Value="1" })
+                                                    @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @Value = "1" })
                                                     @Html.ValidationMessageFor(x => x.Quantity, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail">Giá</label>
-                                                    <input type="text" name="demoPrice" value="0" id="demoPrice" class="form-control auto" data-a-dec="," data-a-sep=".">
-                                                    @Html.HiddenFor(x => x.Price, new { @class = "", @placeholder = "Giá" })
+                                                    <input type="hidden" name="demoPrice" value="0" id="demoPrice" class=" auto">
+                                                    @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @placeholder = "Giá" })
                                                     @Html.ValidationMessageFor(x => x.Price, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
                                             <div class="col-4">
                                                 <div class="form-group">
                                                     <label for="exampleInputPassword1">Giá khuyến mãi</label>
-                                                    <input type="text" name="demoPriceSale" id="demoPriceSale" value="0" class="form-control auto" data-a-dec="," data-a-sep=".">
-                                                    @Html.HiddenFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Giá khuyến mãi" })
+                                                    <input type="hidden" name="demoPriceSale" id="demoPriceSale" value="0" class="form-control auto">
+                                                    @Html.TextBoxFor(x => x.PriceSale, new { @class = "form-control", @placeholder = "Giá khuyến mãi" })
                                                     @Html.ValidationMessageFor(x => x.PriceSale, null, new { @class = "text-danger" })
                                                 </div>
                                             </div>
@@ -174,7 +174,6 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody id="tbHtml">
-                                                        
                                                     </tbody>
                                                 </table>
                                                 <input type="hidden" id="tCurrentId" value="0" />
@@ -213,6 +212,10 @@
                                 </div>
                                 <!-- /.tab-content -->
                             </div><!-- /.card-body -->
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Thêm mới</button>
+                                <a href="/admin/products" class="btn btn-danger">Quay lại</a>
+                            </div>
                         </div> <!-- /.card -->
 
                     }
@@ -236,8 +239,8 @@
             $('.auto').autoNumeric('init');
             $('#demoPrice').bind('blur focusout keypress keyup', function () {
                 var demoGet = $('#demoPrice').autoNumeric('get');
-                $('#Price').val(demoGet);
-                $('#Price').autoNumeric('set', demoGet);
+                $('#demoPrice').val(demoGet);
+                $('#demoPrice').autoNumeric('set', demoGet);
             });
             $('#demoPriceSale').bind('blur focusout keypress keyup', function () {
                 var demoGet = $('#demoPriceSale').autoNumeric('get');
@@ -275,19 +278,19 @@
             var str = "";
             if (currentId == 1) {
                 str += `<tr id="trow_${currentId}">
-                            <td class="text-center">${currentId}</td>
-                            <td class="text-center"><img width="80" src="${url}"/></td>
-                            <td class="text-center"><input type="radio" value="${currentId}" name="rDefault" checked="checked"/></td>
-                            <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
-                       </tr>`;
+                                <td class="text-center">${currentId}</td>
+                                <td class="text-center"><img width="80" src="${url}"/> <input type='hidden' value="${url}" name="Images"/></td>
+                                <td class="text-center"><input type="radio" name="rDefault" value="${currentId}" checked="checked"/></td>
+                                <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
+                           </tr>`;
             }
             else {
                 str += `<tr id="trow_${currentId}">
-                            <td class="text-center">${currentId}</td>
-                            <td class="text-center"><img width="80" src="${url}"/></td>
-                            <td class="text-center"><input type="radio" value="${currentId}" name="rDefault" /></td>
-                            <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
-                       </tr>`;
+                                <td class="text-center">${currentId}</td>
+                                <td class="text-center"><img width="80" src="${url}"/><input type='hidden' value="${url}" name="Images"/></td>
+                                <td class="text-center"><input type="radio" name="rDefault" value="${currentId}"/></td>
+                                <td class="text-center"><a href="#" data-id="${currentId}" class="btn btn-sm btn-danger btnXoaAnh">Xóa</a></td>
+                           </tr>`;
             }
             $('#tbHtml').append(str);
             $('#tCurrentId').val(currentId);
