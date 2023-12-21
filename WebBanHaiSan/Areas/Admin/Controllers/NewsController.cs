@@ -9,6 +9,7 @@ using WebBanHaiSan.Models.EF;
 
 namespace WebBanHaiSan.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin,Employee")]
     public class NewsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

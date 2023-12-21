@@ -123,3 +123,16 @@ E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Up
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Update1206.resources
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateProduct.resources
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Update12061.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdatePayment.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.CreateTBThongKe.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\bin\Dapper.dll
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\bin\Dapper.xml
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateEmail.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Updatekey32.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateSubscribe.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateOriginalPrice.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.EditCategory2.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.InsertCustomerIdOrder.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Table_Review.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Table_Review_Edit_ForeignKey.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.tableWishlist.resources

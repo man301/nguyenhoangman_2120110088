@@ -1,4 +1,4 @@
-/* JS Document */
+﻿/* JS Document */
 
 /******************************
 
@@ -206,13 +206,39 @@ jQuery(document).ready(function($)
     				else
     				{
     					fav.addClass('active');
-    					active = true;
+						active = true;
+						var id = $(this).data('id');
+						//AddWishlist(id);
     				}
     			});
     		});
     	}
-    }
+	}
+	function DeleteWishlist(id) {
+		$.ajax({
+			url: '/wishlist/PostDeleteWishlist',
+			type: 'POST',
+			data: { ProductId: id },
+			success: function (res) {
+				if (res.Success == false) {
+					alert(res.Message);
+				}
+			}
+		});
+	}
 
+	function AddWishlist(id) {
+		$.ajax({
+			url: '/wishlist/postwishlist',
+			type: 'POST',
+			data: { ProductId: id },
+			success: function (res) {
+				if (res.Success == false) {
+					alert(res.Message);
+				}
+			}
+		});
+	}
     /* 
 
 	5. Init Fix Product Border
@@ -322,7 +348,7 @@ jQuery(document).ready(function($)
 	            getSortData: {
 	            	price: function(itemElement)
 	            	{
-	            		var priceEle = $(itemElement).find('.product_price').text().replace( '$', '' );
+						var priceEle = $(itemElement).find('.in_product_price').text().replace( 'đ', '' );
 	            		return parseFloat(priceEle);
 	            	},
 	            	name: '.product_name'
@@ -365,9 +391,9 @@ jQuery(document).ready(function($)
 		            filter: function()
 		            {
 		            	var priceRange = $('#amount').val();
-			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('$', ''));
-			        	var priceMax = parseFloat(priceRange.split('-')[1].replace('$', ''));
-			        	var itemPrice = $(this).find('.product_price').clone().children().remove().end().text().replace( '$', '' );
+			        	var priceMin = parseFloat(priceRange.split('-')[0].replace('đ', ''));
+						var priceMax = parseFloat(priceRange.split('-')[1].replace('đ', ''));
+						var itemPrice = $(this).find('.in_product_price').clone().children().remove().end().text();
 
 			        	return (itemPrice > priceMin) && (itemPrice < priceMax);
 		            },
@@ -393,15 +419,17 @@ jQuery(document).ready(function($)
 		{
 			range: true,
 			min: 0,
-			max: 1000,
-			values: [ 0, 580 ],
+			max: 1000000,
+			values: [ 0, 1000000 ],
 			slide: function( event, ui )
 			{
-				$( "#amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+				$("#amount").val("Đ" + ui.values[0] + " - Đ" + ui.values[1]);
+				$('#FromAmount').val(ui.values[0]);
+				$('#ToAmount').val(ui.values[1]);
 			}
 		});
 			
-		$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+		$( "#amount" ).val( "đ" + $( "#slider-range" ).slider( "values", 0 ) + " - đ" + $( "#slider-range" ).slider( "values", 1 ) );
     }
 
     /* 

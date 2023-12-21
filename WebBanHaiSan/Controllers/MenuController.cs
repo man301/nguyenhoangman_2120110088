@@ -24,7 +24,23 @@ namespace WebBanHaiSan.Controllers
 
         public ActionResult MenuProductCategory()
         {
-            return PartialView();
+            var items = db.ProductCategories.ToList();
+            return PartialView("_MenuProductCategory", items);
+        }
+
+        public ActionResult MenuLeft(int? id)
+        {
+            if (id != null)
+            {
+                ViewBag.CateId = id;
+            }
+            var items = db.ProductCategories.ToList();
+            return PartialView("_MenuLeft", items);
+        }
+        public ActionResult MenuArrivals()
+        {
+            var items = db.ProductCategories.ToList();
+            return PartialView("_MenuArrivals", items);
         }
     }
 }

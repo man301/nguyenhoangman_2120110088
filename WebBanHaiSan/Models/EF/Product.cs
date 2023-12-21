@@ -15,6 +15,8 @@ namespace WebBanHaiSan.Models.EF
         {
             this.ProductImage = new HashSet<ProductImage>();
             this.OrderDetails = new HashSet<OrderDetail>();
+            this.Reviews = new HashSet<ReviewProduct>();
+            this.Wishlists = new HashSet<Wishlist>();
         }
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
@@ -35,9 +37,11 @@ namespace WebBanHaiSan.Models.EF
 
         [StringLength(250)]
         public string Image { get; set; }
+        public decimal OriginalPrice { get; set; }
         public decimal Price { get; set; }
         public decimal? PriceSale { get; set; }
         public int Quantity { get; set; }
+        public int ViewCount { get; set; }
         public bool IsHome { get; set; }
         public bool IsSale { get; set; }
         public bool IsFeature { get; set; }
@@ -54,5 +58,7 @@ namespace WebBanHaiSan.Models.EF
         public virtual ProductCategory ProductCategory { get; set; }
         public virtual ICollection<ProductImage> ProductImage { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual ICollection<ReviewProduct> Reviews { get; set; }
+        public virtual ICollection<Wishlist> Wishlists { get; set; }
     }
 }

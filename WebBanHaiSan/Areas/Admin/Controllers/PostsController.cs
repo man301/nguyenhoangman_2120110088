@@ -8,6 +8,7 @@ using WebBanHaiSan.Models.EF;
 
 namespace WebBanHaiSan.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "Admin,Employee")]
     public class PostsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

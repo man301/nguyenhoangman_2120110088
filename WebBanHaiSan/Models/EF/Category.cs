@@ -21,6 +21,9 @@ namespace WebBanHaiSan.Models.EF
         [StringLength(150)]
         public string Title { get; set; }
         public string Allias { get; set; }
+        //[StringLength(150)]
+        //public string TypeCode { get; set; }
+        public string Link { get; set; }
         public string Description { get; set; }
         [StringLength(150)]
         public string SeoTitle { get; set; }

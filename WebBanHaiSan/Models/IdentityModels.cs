@@ -28,6 +28,9 @@ namespace WebBanHaiSan.Models
         {
         }
 
+        public DbSet<Wishlist> Wishlists { get; set; }
+        public DbSet<ReviewProduct> Reviews { get; set; }
+        public DbSet<ThongKe> ThongKes { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Adv> Advs { get; set; }
         public DbSet<Post> Posts { get; set; }
