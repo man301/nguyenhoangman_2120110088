@@ -14,13 +14,17 @@ namespace WebBanHaiSan.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: Admin/Products
-        public ActionResult Index(int? page)
+        public ActionResult Index(string Searchtext, int? page)
         {
             IEnumerable<Product> items = db.Products.OrderByDescending(x => x.Id);
             var pageSize = 10;
             if (page == null)
             {
                 page = 1;
+            }
+            if(!string.IsNullOrEmpty(Searchtext))
+            {
+                items = items.Where(x => x.Allias.Contains(Searchtext) || x.Title.Contains(Searchtext));
             }
             var pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
             items = items.ToPagedList(pageIndex, pageSize);
@@ -158,6 +162,14 @@ namespace WebBanHaiSan.Areas.Admin.Controllers
                 return Json(new { success = true, IsSale = item.IsSale });
             }
             return Json(new { success = false });
+        }
+        [HttpPost]
+        public ActionResult DeleteImage(int id)
+        {
+            var item = db.ProductImages.Find(id);
+            db.ProductImages.Remove(item);
+            db.SaveChanges();
+            return Json(new { success = true });
         }
     }
 }

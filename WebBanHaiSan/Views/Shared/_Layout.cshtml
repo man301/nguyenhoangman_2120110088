@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/OwlCarousel2-2.2.1/animate.css">
     <link rel="stylesheet" type="text/css" href="~/Content/assets/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" href="~/Content/clients/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
 
     @*@RenderSection("css", required: false)*@
     <link rel="stylesheet" type="text/css" href="~/Content/assets/styles/responsive.css">
@@ -73,8 +75,8 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                             <ul class="account_selection">
-                                                <li><a href="/account/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
-                                                <li><a href="/account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+                                                <li><a href="/account/login"><i class="fa fa-sign-in" aria-hidden="true"></i>Đăngnhập</a></li>
+                                                <li><a href="/account/Register"><i class="fa fa-user-plus" aria-hidden="true"></i>Đăng ký</a></li>
                                             </ul>
                                         }
                                         else
@@ -84,9 +86,9 @@
                                                 <i class="fa fa-angle-down"></i>
                                             </a>
                                             <ul class="account_selection">
-                                                <li><a href="/account/profile"><i class="fa fa-sign-in" aria-hidden="true"></i>Profile</a></li>
+                                                <li><a href="/account/profile"><i class="fa fa-sign-in" aria-hidden="true"></i>Hồ sơ</a></li>
                                                 <li><a href="/wishlist/index"><i class="fa fa-sign-in" aria-hidden="true"></i>Sản phẩm yêu thích</a></li>
-                                                <li><a href="javascript:document.getElementById('logOffForm').submit()"><i class="fa fa-user-plus" aria-hidden="true"></i>Logout</a></li>
+                                                <li><a href="javascript:document.getElementById('logOffFormHome').submit()"><i class="fa fa-power-off" aria-hidden="true"></i>Logout</a></li>
                                             </ul>
                                         }
                                     </li>
@@ -94,7 +96,7 @@
                                 @if (Request.IsAuthenticated)
                                 {
                                     <div style="display:none">
-                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logOffForm" }))
+                                        @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logOffFormHome" }))
                                         {
                                             @Html.AntiForgeryToken()}
 

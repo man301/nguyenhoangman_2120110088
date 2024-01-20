@@ -36,7 +36,7 @@
     {
         foreach (var item in Model)
         {
-            <div class="row row-item-new">
+            <div id="trow_@item.Id" class="row row-item-new">
                 <div class="col-md-3">
                     <div class="img-box">
                         <a href="" title="@item.Product.Title"><img src="@item.Product.Image" alt="@item.Product.Title" /></a>
@@ -51,7 +51,7 @@
                     </div>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-id="@item.Id" class="btn btn-danger">Xóa</a>
+                    <a href="#" data-id="@item.Id" class="btn btn-danger btnWishlistDelete">Xóa</a>
                 </div>
             </div>
         }
@@ -65,3 +65,23 @@
 
 </div>
 
+@section scripts{
+    <script>
+        $('body').on('click', '.btnWishlistDelete', function () {
+            var id = $(this).data("id");
+            var conf = confirm('Bạn có muốn xóa sản phẩm này không?');
+            if (conf === true) {
+                $.ajax({
+                    url: '/Wishlist/delete',
+                    type: 'POST',
+                    data: { id: id },
+                    success: function (rs) {
+                        if (rs.success) {
+                            $('#trow_' + id).remove();
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+}

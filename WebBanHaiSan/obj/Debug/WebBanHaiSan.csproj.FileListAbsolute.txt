@@ -136,3 +136,4 @@ E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.In
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Table_Review.resources
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.Table_Review_Edit_ForeignKey.resources
 E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.tableWishlist.resources
+E:\websitebanhang\WebBanHaiSan\WebBanHaiSan\obj\Debug\WebBanHaiSan.Migrations.UpdateOrderStatus.resources

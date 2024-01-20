@@ -64,6 +64,19 @@ namespace WebBanHaiSan.Controllers
             return Json(new { Success = false, Message = "Xóa thất bại." });
         }
 
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            var item = db.Wishlists.Find(id);
+            if (item != null)
+            {
+                db.Wishlists.Remove(item);
+                db.SaveChanges();
+                return Json(new { success = true });
+            }
+            return Json(new { success = false });
+        }
+
         private ApplicationDbContext db = new ApplicationDbContext();
         protected override void Dispose(bool disposing)
         {

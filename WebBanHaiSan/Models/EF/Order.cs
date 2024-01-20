@@ -30,6 +30,7 @@ namespace WebBanHaiSan.Models.EF
         public int Quantity { get; set; }
         public int TypePayment { get; set; }
         public string CustomerId { get; set; }
+        public int Status { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

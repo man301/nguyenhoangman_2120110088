@@ -307,21 +307,37 @@
             }
             $('#tbHtml').append(str);
             $('#tCurrentId').val(currentId);
-            //$('#tbHtml tr td a').each(function () {
-            //    $(this).click(function () {
-            //        var conf = confirm('Bạn có muốn xóa không?');
-            //        if (conf === true) {
-            //            var _id = $(this).data('id');
-            //            $('#trow_' + _id).fadeTo('fast',1, function () {
-            //                $(this).slideUp('fast', function () { $(this).remove(); });
-            //        });
-            //    var temp = $('#tCurrentId').val();
-            //    var currentId = parseInt(temp) - 1;
-            //    $('#tCurrentId').val(currentId);
-            //        }
-            //    });
-            //});
+            $('#tbHtml tr td a').each(function () {
+                $(this).click(function () {
+                    var conf = confirm('Bạn có muốn xóa không?');
+                    if (conf === true) {
+                        var _id = $(this).data('id');
+                        $('#trow_' + _id).fadeTo('fast',1, function () {
+                            $(this).slideUp('fast', function () { $(this).remove(); });
+                    });
+                var temp = $('#tCurrentId').val();
+                var currentId = parseInt(temp) - 1;
+                $('#tCurrentId').val(currentId);
+                    }
+                });
+            });
         }
+        //$('body').on('click', '.btnXoaAnh', function () {
+        //    var id = $(this).data("id");
+        //    var conf = confirm('Bạn có muốn xóa bản ghi này không?');
+        //    if (conf === true) {
+        //        $.ajax({
+        //            url: '/admin/Products/DeleteImage',
+        //            type: 'POST',
+        //            data: { id: id },
+        //            success: function (rs) {
+        //                if (rs.success) {
+        //                    $('#trow_' + currentId).remove();
+        //                }
+        //            }
+        //        });
+        //    }
+        //});
     </script>
 }
 
